@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Wait, Do I Have This?",
+    "slug": "do-i-have-this",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "doihavethis",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fafaf9"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.doihavethis.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Used to photograph book covers and spines for your inventory.",
+        "NSPhotoLibraryUsageDescription": "Used to select book photos from your library."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#fafaf9"
+      },
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"],
+      "package": "com.doihavethis.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      "expo-image-picker"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
