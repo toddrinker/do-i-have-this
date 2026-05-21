@@ -42,6 +42,27 @@ export type IdentifySource = "catalog" | "open_library" | "claude";
 
 export interface IdentifyResponse {
   book: BookCatalogEntry | null;
-  /** Which tier of the lookup chain produced the result. */
   source: IdentifySource | null;
+}
+
+export interface ShelfBook {
+  /** Stable key for list rendering — not persisted. */
+  localId: string;
+  title: string;
+  author: string;
+  isbn?: string;
+  cover_url?: string;
+  published_year?: number;
+  open_library_key?: string;
+  source: "open_library" | "claude";
+}
+
+export interface ShelfScanResponse {
+  books: ShelfBook[];
+  /** False when CLAUDE_VISION_ENABLED is off. */
+  claudeEnabled: boolean;
+}
+
+export interface SearchResponse {
+  results: BookCatalogEntry[];
 }
